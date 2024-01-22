@@ -5,7 +5,7 @@ class ComputerPlayer extends Player {
     public int makeGuess() {
         Random random = new Random();
         int computerGuess = random.nextInt(100) + 1;
-        System.out.println(STR."Player 2 guess: \{computerGuess}");
+        System.out.println("Player 2 guess: " + computerGuess);
         this.getGuesses().add(computerGuess);
         return computerGuess;
     }

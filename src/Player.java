@@ -3,7 +3,7 @@ import java.util.List;
 
 abstract public class Player {
     private String name;
-    private List<Integer> guesses = new ArrayList<>();
+    private final List<Integer> guesses = new ArrayList<>();
 
     public abstract int makeGuess();
 
