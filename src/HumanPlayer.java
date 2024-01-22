@@ -16,6 +16,6 @@ public HumanPlayer(){
         Scanner scanner = new Scanner(System.in);
         String playerName = scanner.nextLine();
         setName(playerName);
-    }
+    }dsfsdfss
 
     }
