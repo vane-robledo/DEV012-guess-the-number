@@ -10,7 +10,7 @@ public class GuessTheNumberGame {
         return targetNumber;
     }
 
-    public static boolean checkGuess(Player player) {
+    public static boolean checkGuess(Player player, int targetNumber) {
         int guess = player.makeGuess();
         if (player instanceof HumanPlayer) {
             if (guess < targetNumber) {
@@ -18,7 +18,9 @@ public class GuessTheNumberGame {
             } else if (guess > targetNumber) {
                 System.out.println("Too High!");
             } else {
+                System.out.println("Correct!");
                 return true;
+
             }
             return false;
         } else if (player instanceof ComputerPlayer) {
@@ -43,21 +45,21 @@ public class GuessTheNumberGame {
 
         do{
             System.out.println("----- Player 1 -----");
-            if (checkGuess(humanPlayer)){
-                System.out.println("Correct! " + humanPlayer.getName() + " guessed the number in " + humanPlayer.getGuesses().size() + " attempts.");
+            if (checkGuess(humanPlayer, targetNumber)){
+                System.out.println(humanPlayer.getName() + " guessed the number in " + humanPlayer.getGuesses().size() + " attempts.");
                 System.out.println("Attempts: " + humanPlayer.getGuesses().toString());
 
                 break;
             }
             System.out.println("----- Computer Player -----");
-            if (checkGuess(computerPlayer)) {
-                System.out.println("Correct! Computer Player guessed the number in " +computerPlayer.getGuesses().size() + " attempts.");
+            if (checkGuess(computerPlayer, targetNumber)) {
+                System.out.println("Computer Player guessed the number in " +computerPlayer.getGuesses().size() + " attempts.");
                 System.out.println("Attempts: " + computerPlayer.getGuesses().toString());
 
                 break;
             }
         }
 
-        while(true); //variable que sea true
+        while(true);
     }
 }
